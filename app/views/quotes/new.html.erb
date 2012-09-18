@@ -1,0 +1,30 @@
+<%= form_for @quote do |f| %>
+  <% if @quote.errors.any? %>
+    <div class="error_messages">
+      <h2><%= pluralize(@survey.errors.count, "error") %> prohibited this survey from being saved:</h2>
+      <ul>
+      <% @survey.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :text, "Quote" %><br />
+    <%= f.text_field :text %>
+  </div>
+
+  <%= f.fields_for :analysis do |f| %>
+    <%= f.label :text, "Analysis of Quote" %><br />
+    <%= f.text_field :text %>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+
+
+

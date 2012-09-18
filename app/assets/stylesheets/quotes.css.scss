@@ -1,0 +1,34 @@
+// Place all the styles related to the quotes controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+body
+{
+color: #00FF00;
+background-color:black;
+font-family:"Monaco"
+}
+
+a {color: #FF00FF;
+   text-decoration:none;
+}
+
+.center
+{
+margin-left:auto;
+margin-right:auto;
+width:80%;
+}
+
+p{font-family:"Monaco", Times, serif;}
+
+table, th, td
+{
+border: 1px solid #FF00FF;
+}
+
+th
+{
+background-color:black;
+color:white;
+}

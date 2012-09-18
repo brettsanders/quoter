@@ -1,0 +1,40 @@
+<div class="center">
+<h1>Quoter!</h1>
+
+<%= form_tag("/search", :method => "get") do %>
+  <%= label_tag(:q, "Search for Quote:") %>
+  <%= text_field_tag(:q) %>
+  <%= submit_tag("Search") %>
+<% end %>
+
+<%= link_to("+ Add A Quote", new_quote_path) %>
+
+
+<table>
+  <tr>
+    <th>Book Title</th>
+    <th>Year</th>
+    <th>Author</th>
+    <th>Quote</th>
+    <th>Page</th>
+    <th>Analysis</th>
+  </tr>
+
+  <% @quotes.each do |quote| %>
+  <tr>
+    <td><%= quote.book.title %></td>
+    <td><%= quote.book.year %></td>
+    <td><%= quote.book.author %></td>
+    <td><%= truncate quote.text, length: 60 %></td>
+    <td><%= quote.page %></td>
+    <td><% quote.analyses.each do |analysis| %> 
+          <%= truncate analysis.text, length: 60 %>
+    <% end %>
+    </td>
+  </tr>
+  <% end %>
+
+  
+
+</table>
+</div>
